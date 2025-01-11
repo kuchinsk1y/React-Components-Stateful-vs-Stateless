@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+# React Components Example
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Этот проект демонстрирует основы разработки компонентов в React. Здесь представлены три типа компонентов: stateful (с управляемым состоянием), stateless (без состояния) и классический компонент на основе классов. 
 
-## Available Scripts
+Цель проекта — показать разницу между функциональными и классовыми компонентами, а также продемонстрировать базовые концепции React, такие как управление состоянием и работа с пропсами.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🛠️ Технологии
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+В проекте используются:
+- **React** — библиотека для создания пользовательского интерфейса.
+- **JavaScript** (ES6+) — язык разработки.
+- **npm** — менеджер пакетов.
+- **Create React App** — инструмент для быстрого создания React-приложения.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 📂 Структура проекта
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```plaintext
+src/
+├── components/
+│   ├── StatefulComponent.jsx      # Состояние компонента (useState)
+│   ├── StatelessComponent.jsx     # Простой компонент (только пропсы)
+│   ├── ClassComponent.jsx         # Классический компонент с состоянием
+├── App.jsx                        # Главный компонент
+├── index.js                       # Точка входа в приложение
+├── reportWebVitals.js             # Метрики производительности
+└── index.css                      # Стили
+```
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## ⚙️ Установка и запуск проекта
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Следуйте этим шагам, чтобы запустить проект на вашем компьютере:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1. Клонируйте репозиторий
+Скопируйте проект из GitHub:
+```bash
+git clone https://github.com/<ваш-логин>/react-components-example.git
+```
 
-### `npm run eject`
+Перейдите в папку проекта:
+```bash
+cd react-components-example
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 2. Установите зависимости
+Убедитесь, что у вас установлены Node.js и npm. Затем запустите:
+```bash
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Это установит все необходимые зависимости.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 3. Запустите проект
+Для запуска проекта выполните:
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+После этого приложение откроется в браузере по адресу: http://localhost:3000
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🧩 Компоненты проекта
 
-### Analyzing the Bundle Size
+### Stateful Component
+Функциональный компонент, использующий хук `useState` для управления состоянием. Демонстрирует, как в функциональном компоненте можно обновлять, изменять и выводить текущее состояние.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Stateless Component
+Простой функциональный компонент, который принимает данные через пропсы и отображает их. У него отсутствует собственное состояние.
 
-### Making a Progressive Web App
+### Class Component
+Классический компонент, который демонстрирует использование класса (`React.Component`) для управления состоянием и работы со стандартными методами жизненного цикла React.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 🚀 Пример использования
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+На странице вы увидите три компонента:
+1. **Stateful Component** — счетчик с кнопками для увеличения и уменьшения значения.
+2. **Stateless Component** — отображающий текстовое сообщение, переданное через пропс.
+3. **Class Component** — аналог "Stateful Component", но выполненный на основе класса.
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## ⚠️ Возможные проблемы
 
-### `npm run build` fails to minify
+### Проблема с зависимостью `web-vitals`
+Если при установке вы столкнулись с ошибкой `Module not found: Can't resolve 'web-vitals'`, выполните команду для установки пакета вручную:
+```bash
+npm install web-vitals
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+После этого перезапустите проект:
+```bash
+npm start
+```
