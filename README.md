@@ -92,13 +92,41 @@ npm start
 
 ## ⚠️ Возможные проблемы
 
-### Проблема с зависимостью `web-vitals`
-Если при установке вы столкнулись с ошибкой `Module not found: Can't resolve 'web-vitals'`, выполните команду для установки пакета вручную:
+### 1. Проблемы с установкой зависимостей
+Если при установке возникает ошибка:
+```bash
+npm ERR! ERESOLVE unable to resolve dependency tree
+```
+**Решение:**
+```bash
+npm install --legacy-peer-deps
+```
+
+### 2. Ошибка модуля `web-vitals`
+Если при запуске проекта возникает ошибка:
+```bash
+ERROR in ./src/reportWebVitals.js
+Module not found: Error: Can't resolve 'web-vitals'
+```
+**Решение:**
+Установите пакет вручную:
 ```bash
 npm install web-vitals
 ```
 
-После этого перезапустите проект:
+### 3. Проблемы с устаревшей версией Node.js
+Если вы используете старую версию Node.js, могут возникнуть проблемы с установкой зависимостей. Убедитесь, что у вас свежая версия (лучше **16.x** или **18.x**):
 ```bash
-npm start
+node -v
 ```
+**Рекомендуется:** скачать последнюю **LTS-версию**
+
+### 4. Проект не запускается (npm start)
+Если сервер разработки не запускается:
+- Проверьте, завершилась ли команда `npm install` без ошибок.
+- Удалите папку `node_modules` и файл `package-lock.json`, затем установите зависимости заново:
+  ```bash
+  rm -rf node_modules package-lock.json
+  npm install
+  npm start
+  ```
